@@ -1,0 +1,23 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+
+  padding: 10px;
+  width: 40vw;
+  height: 50vh;
+  margin: auto;
+  margin-top: 100px;
+}
+.gridItem,
+.gridItemBefore {
+  border: none;
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+}
+.gridItem {
+  text-align: center;
+}
+.gridItemBefore {
+  opacity: 0;
+}

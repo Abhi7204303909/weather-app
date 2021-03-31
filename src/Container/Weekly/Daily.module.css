@@ -1,0 +1,8 @@
+.AuxContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.item {
+  margin: 10px 10px;
+}
