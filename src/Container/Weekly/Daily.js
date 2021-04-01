@@ -13,16 +13,19 @@ class Daily extends Component{
  
    searchLocationHandler=(e)=>{
        e.prevenDefault()
-       console.log(e);
-       console.log('[inside Daily]',e.target.value);
+    //    console.log(e);
+    //    console.log('[inside Daily]',e.target.value);
    }
     componentDidMount(){
         let arr=[];
+        // console.log(LOC);
+        if(LOC==='')return
         fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${LOC}&appid=9a566627df04c9ed63f4c5c0d254cc44`)
         .then(res=>{
             return res.json()
         })
         .then(el=>{
+            // console.log(el.list);
             // console.log(el.list);
             el.list.forEach(e=>{
                  let da=new Date(e.dt*1000).getDate();
@@ -38,7 +41,7 @@ class Daily extends Component{
             this.setState({data:arr})
         })
         .catch((err)=>{
-            console.log(err.message);
+            // console.log(err.message);
         })
     }
     render(){
@@ -51,7 +54,7 @@ class Daily extends Component{
                return Math.abs(el.hour-new Date().getHours())<=1;
                 
             })
-            // console.log(filterdArray);
+        //  console.log(filterdArray);
             
 
          }
@@ -67,7 +70,7 @@ class Daily extends Component{
             })
         }
      
-         console.log(filterdArray);
+        //  console.log(filterdArray);
            return (
                 <Aux>
                        

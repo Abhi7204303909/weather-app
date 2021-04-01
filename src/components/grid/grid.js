@@ -4,7 +4,7 @@ import classes from './grid.module.css'
 const grid=(props)=>{
 let len=props.data.length;
 
-console.log(props.data[0]?props.data[0].feels_like:'');
+// console.log(props.data[0]?props.data[0].feels_like:'');
 const sunRise=props.data.length===3?new Date(props.data[1].sunrise*1000):null;
 const sunSet=props.data.length?new Date(props.data[1].sunset*1000):null;
 let gridClass;

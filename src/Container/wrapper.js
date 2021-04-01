@@ -20,7 +20,7 @@ class wrapper extends Component{
         event.preventDefault();
         const city=event.target.firstChild.value;
         let updateCity=city[0].toLowerCase()+city.slice(1,city.length)
-        console.log(city);
+        // console.log(city);
         this.setState({loading:true})
        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${updateCity}&appid=9a566627df04c9ed63f4c5c0d254cc44`)
         .then(res=>{
@@ -32,7 +32,7 @@ class wrapper extends Component{
           
           this.setState({data:[arr],location:arr.name,loading:false});
           // LOC=arr.name;
-          console.log(arr); 
+          // console.log(arr); 
         })
         .catch(()=>{
           this.setState({loading:false,error:true});
@@ -42,7 +42,7 @@ class wrapper extends Component{
       }
       render(){
          LOC=this.state.location!==''?this.state.location:'';
-        console.log('LOC LOG',LOC);
+        // console.log('LOC LOG',LOC);
         this.weatherData=this.state.data?
         [this.state.data[0].main,this.state.data[0]
         .sys,this.state.data[0].wind]:[];
